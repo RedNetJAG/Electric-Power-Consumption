@@ -12,6 +12,9 @@
 ##
 ##################################################################################
 
+## Set english as default language
+Sys.setlocale("LC_TIME", "English")
+
 ## Read data from files
 data <- read.csv("../exdata_data_household_power_consumption/data.txt", sep=';', na.strings="?", header=T)
 
