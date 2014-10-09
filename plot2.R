@@ -8,7 +8,7 @@
 ## plot1.R that does the following:
 ## 1. Read Data and subset it
 ## 2. Open Graphic Device PNG
-## 3. Create hist
+## 3. Create plot
 ##
 ##################################################################################
 
@@ -20,12 +20,15 @@ data$Date <- as.Date(data$Date, format="%d/%m/%Y")
 subdata <- subset(data, subset=(Date >= "2007-02-01" & Date <= "2007-02-02"))
 rm(data)
 
-## Open Graphic Device PNG
-png(filename = "plot1.png", width = 480, height = 480, units = "px")
+## Paste and Normalized Date & Time
+DateTime <- paste(subdata$Date, subdata$Time)
+subdata$Datetime <- as.POSIXct(DateTime)
 
-##Generates the hist
-hist(subdata$Global_active_power, main = "Global Active Power", xlab = "Global Active Power (kilowatts)", ylab="Frequency", col = "Red")
+## Open Graphic Device PNG
+png(filename = "plot2.png", width = 480, height = 480, units = "px")
+
+##Generates the plot
+plot(subdata$Global_active_power~subdata$Datetime, type="l", ylab="Global Active Power (kilowatts)", xlab="")
 
 ##Close Graphic Device
 dev.off()
-
