@@ -3,7 +3,7 @@
 ## by Jeff Leek, PhD, Brian Caffo, PhD, Roger D. Peng, PhD
 ## 
 ## plot1.R by JAGomez
-## 09/10/2014
+## 09-Oct-2014
 ##
 ## plot3.R that does the following:
 ## 1. Read Data and subset it
